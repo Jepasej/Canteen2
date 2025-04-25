@@ -3,7 +3,7 @@ package org.example.canteen2.Controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import org.example.canteenmgmtsystem.HelloApplication;
+import org.example.canteen2.HelloApplication;
 
 public class LoginViewController {
     @FXML

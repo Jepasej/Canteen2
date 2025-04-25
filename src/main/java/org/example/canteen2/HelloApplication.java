@@ -5,7 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.example.canteenmgmtsystem.controllers.SceneControllerPairs;
+import org.example.canteen2.Controllers.ControllerNames;
+import org.example.canteen2.Controllers.SceneControllerPairs;
 
 import java.io.IOException;
 import java.util.ArrayList;
