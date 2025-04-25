@@ -1,5 +1,7 @@
 package org.example.canteen2.Models;
-
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import org.example.canteen2.Controllers.MenuViewController;
 
 public class Order {
@@ -25,4 +27,19 @@ public class Order {
     public double getTotalPrice(){
         return totalPrice;
     }
+
+    private List<MenuItem> orderItems = new ArrayList<>();
+
+    public void addItem(MenuItem item)
+    {
+        orderItems.add(item);
+        System.out.println(item.getName() + " added to order.");
+    }
+
+    public void updateStorage()
+        {
+
+            //Takes the items added into the ArrayList and makes subtracts them from the database with
+            //the help of Stored Procedures and callable Statements.
+        }
 }
