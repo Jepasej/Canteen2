@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.canteen2.Controllers.ControllerNames;
 import org.example.canteen2.Controllers.SceneControllerPairs;
+import org.example.canteen2.Models.Account;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,6 +48,16 @@ public class HelloApplication extends Application {
         stage.setTitle("Green Canteen");
         stage.setScene(overViewScene);
         stage.show();
+
+        Account account = new Account(0.0 , 1234);
+
+        account.checkBalance();
+
+        account.updateBalance(500.0);
+
+        System.out.println("Balance after update: " + account.getBalance());
+
+
     }
 
     /**
