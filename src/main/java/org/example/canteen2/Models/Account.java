@@ -18,7 +18,7 @@ public class Account {
     public Account() {
     }
 
-    public void checkBalance() {
+    public double checkBalance() {
         switch (employeeId) {
             case 1234:
                 this.balance = 1000.0;
@@ -30,8 +30,8 @@ public class Account {
                 this.balance = 0.0;
                 break;
         }
-
         System.out.println("Balance for employee ID " + this.employeeId + ": " + this.balance);
+        return 1000.0;
     }
 
     public void updateBalance(double amount) {
