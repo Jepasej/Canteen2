@@ -36,6 +36,9 @@ public class LoginViewController {
         }
     }
 
+    /**
+     * Checks whether the users input are 4 digits ot not
+     */
     @FXML
     private void clickLogin(){
         if (userInput.length() == 4) {
