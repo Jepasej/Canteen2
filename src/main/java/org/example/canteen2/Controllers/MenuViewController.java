@@ -7,12 +7,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.example.canteen2.Models.MenuItem;
+import org.example.canteen2.Models.Payment;
 
 import java.io.IOException;
 
 public class MenuViewController {
     @FXML
     private Button paymentBtn;
+    Payment payment;
 
     /**
      * A popup window that sits atop the MenuView window. Here the user can choose how to make the payment.
@@ -32,9 +35,23 @@ public class MenuViewController {
             popUpStage.initOwner(paymentBtn.getScene().getWindow());
             popUpStage.setScene(new Scene(popUpRoot));
             popUpStage.showAndWait(); //Awaits the user's choice
+
+            String valgt = ChoosePaymentViewController.getSelectedPayment();
+            if (valgt != null && valgt.equals("account")) {
+                payment = new Payment();
+            }
         }
         catch (IOException e) {
-            System.out.println("Fil \"ChoosePaymentView.fxml\" ikke fundet");
+            System.out.println("File \"ChoosePaymentView.fxml\" not found");
         }
+    }
+
+    @FXML
+    private String confirmOrder(){
+        MenuItem menuItem = new MenuItem();
+        if(menuItem > 0){
+
+        }
+        //return menuItems og totalPrice
     }
 }
