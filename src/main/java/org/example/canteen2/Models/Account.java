@@ -6,22 +6,38 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * Class is responsible for storing a value to an ID
+ * The Goal was to use stored procedures from our database through callable statements
+ */
 public class Account {
     private double balance;
     private int employeeId;
 
+    /**
+     *
+     * @param balance, a value we would store in a database
+     * @param employeeId, is to associate a balance to an ID
+     */
     public Account(double balance, int employeeId) {
         this.balance = balance;
         this.employeeId = employeeId;
     }
 
-    public Account() {
+    public Account()
+    {
+
     }
 
+    /**
+     * Method checks the balance of an employee
+     * @return
+     */
     public double checkBalance() {
+        //Switch Case to potentially test more employees
         switch (employeeId) {
-            case 1234:
-                this.balance = 1000.0;
+            case 1111:
+                this.balance = 1000.0; //Magic number to test
                 break;
             case 2341:
                 this.balance = 1500.0;
@@ -30,13 +46,18 @@ public class Account {
                 this.balance = 0.0;
                 break;
         }
+        // Prints out in console to test the program
         System.out.println("Balance for employee ID " + this.employeeId + ": " + this.balance);
         return 1000.0;
     }
 
-    public void updateBalance(double amount) {
-        this.balance += amount;
+    /**
+     * Updates the balance of an account
+     * @param amount a double that adds into an existing employee's account
+     */
+    public double updateBalance(double amount) {
         System.out.println("Updated balance for employee ID " + this.employeeId + ": " + this.balance);
+        return this.balance += amount;
     }
 
     public double getBalance() {

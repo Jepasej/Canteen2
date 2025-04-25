@@ -47,13 +47,7 @@ public class HelloApplication extends Application {
         stage.setScene(overViewScene);
         stage.show();
 
-        Account account = new Account(0.0 , 1234);
 
-        account.checkBalance();
-
-        account.updateBalance(500.0);
-
-        System.out.println("Balance after update: " + account.getBalance());
 
 
     }
@@ -89,6 +83,11 @@ public class HelloApplication extends Application {
         }
     }
     public static void main(String[] args) {
+        Account account = new Account(0.0 , 1111);
+        account.checkBalance();
+        account.updateBalance(500.0);
+        System.out.println("Balance after update: " + account.getBalance());
+
         launch();
     }
 }
