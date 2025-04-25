@@ -9,7 +9,7 @@ public class Order {
 
         Order order = payableOrder;
 
-        Double payableBalance = payableOrder.getTotalPrice();
+        Double payableBalance = order.getTotalPrice();
         //paymentnamegetfromLouise.paymentBalance(payableBalance);
 
     }
