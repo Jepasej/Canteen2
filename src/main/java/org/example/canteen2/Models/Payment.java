@@ -2,7 +2,7 @@ package org.example.canteen2.Models;
 
 public class Payment {
 
-    Account account = new Account();
+    Account account = new Account(1111, 1111);
 
     /**
      * Sends a double to account to withdraw money from user account balance

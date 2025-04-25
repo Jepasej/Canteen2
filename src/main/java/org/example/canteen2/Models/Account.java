@@ -56,8 +56,10 @@ public class Account {
      * @param amount a double that adds into an existing employee's account
      */
     public double updateBalance(double amount) {
+        this.balance -= amount;
         System.out.println("Updated balance for employee ID " + this.employeeId + ": " + this.balance);
-        return this.balance += amount;
+
+        return this.balance -= amount;
     }
 
     public double getBalance() {
