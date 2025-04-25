@@ -14,7 +14,9 @@ public class ChoosePaymentViewController {
         return selectedPayment;
     }
 
-
+    /**
+     * Used when selcted payment method is account.
+     */
     @FXML
     private void accountPayment() {
         selectedPayment = "account";
