@@ -21,7 +21,7 @@ public class MenuViewController {
     @FXML
     private void choosePayment() throws IOException {
         try {
-            FXMLLoader loadPopUp = new FXMLLoader(getClass().getResource("/org/example/canteenmgmtsystem/ChoosePaymentView.fxml"));
+            FXMLLoader loadPopUp = new FXMLLoader(getClass().getResource("/org/example/canteen2/ChoosePaymentView.fxml"));
             System.out.println("Loader URL: " + getClass().getResource("ChoosePaymentView.fxml"));
 
             Parent popUpRoot = loadPopUp.load();
