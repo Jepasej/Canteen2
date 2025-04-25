@@ -40,7 +40,7 @@ public class MenuViewController {
         }
     }
 
-    public static Payment getPayment() {
+    public Payment getPayment() {
         return payment;
     }
 }
