@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class DatabaseConnection {
 
-    static final String DATABASEURL = "jdbc:sqlserver://localhost;database=dbTommyDAOExercise";
+    static final String DATABASEURL = "jdbc:sqlserver://localhost;database=DBCanteen";
     static final String USERNAME = "sa";
-    static final String PASSWORD = "admin";
+    static final String PASSWORD = "123456";
 
 
     public static Connection getConnection() throws Exception
