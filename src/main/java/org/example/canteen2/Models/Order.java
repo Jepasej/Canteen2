@@ -1,4 +1,7 @@
 package org.example.canteen2.Models;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
 
@@ -17,12 +20,7 @@ public class Order {
     public double getTotalPrice(){
         return totalPrice;
     }
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
-public class Order
-{
     private List<MenuItem> orderItems = new ArrayList<>();
 
     public void addItem(MenuItem item)
