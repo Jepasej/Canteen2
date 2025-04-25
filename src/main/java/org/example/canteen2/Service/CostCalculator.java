@@ -22,7 +22,7 @@ public class CostCalculator
         //Loop through each menu item and add its price to the total price
         for (MenuItem menuItem : menuItems)
         {
-            total += menuItems.getPrice();
+            total += menuItem.getPrice();
         }
 
         //Return the calculated total price

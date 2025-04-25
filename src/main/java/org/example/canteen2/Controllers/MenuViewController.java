@@ -9,13 +9,19 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.canteen2.Models.MenuItem;
 import org.example.canteen2.Models.Payment;
+import org.example.canteen2.Service.CostCalculator;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuViewController {
     @FXML
     private Button paymentBtn;
+
     Payment payment;
+    private CostCalculator costCalculator;
+    private List<MenuItem> menuItems = new ArrayList<>();
 
     /**
      * A popup window that sits atop the MenuView window. Here the user can choose how to make the payment.
@@ -36,6 +42,8 @@ public class MenuViewController {
             popUpStage.setScene(new Scene(popUpRoot));
             popUpStage.showAndWait(); //Awaits the user's choice
 
+            // Chosen payment method is retrieved from the popup.
+            // The user selects "account", a new Payment object is created to proceed with account payment.
             String valgt = ChoosePaymentViewController.getSelectedPayment();
             if (valgt != null && valgt.equals("account")) {
                 payment = new Payment();
@@ -46,12 +54,13 @@ public class MenuViewController {
         }
     }
 
-    @FXML
-    private String confirmOrder(){
-        MenuItem menuItem = new MenuItem();
-        if(menuItem > 0){
-
-        }
-        //return menuItems og totalPrice
+    /**
+     * Shows the order overview with chosen menu items and the total price.
+     */
+    public void confirmOrder(){
+        double total = costCalculator.calcPrice(menuItems);
+        //To check if the method shows the correct menuitems and total price. Only for development use
+        System.out.println("Du har valgt: " + menuItems);
+        System.out.printf("\nTotalprisen er: %2f DKK%n", total);
     }
 }
