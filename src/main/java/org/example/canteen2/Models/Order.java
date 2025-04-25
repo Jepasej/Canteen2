@@ -28,6 +28,9 @@ public class Order {
         return totalPrice;
     }
 
+    /**
+     * Creates a List out of the MenuItems and adds them to their own ArrayList
+     */
     private List<MenuItem> orderItems = new ArrayList<>();
 
     public void addItem(MenuItem item)

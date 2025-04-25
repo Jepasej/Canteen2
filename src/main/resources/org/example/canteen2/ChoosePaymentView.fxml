@@ -25,7 +25,7 @@
                         <Insets left="15.0" />
                     </GridPane.margin>
                 </Button>
-                <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" text="Kontobetaling" textAlignment="CENTER" textFill="#4e4e4e" GridPane.columnIndex="1">
+                <Button fx:id="accountBtn" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accountPayment" prefHeight="40.0" prefWidth="175.0" text="Kontobetaling" textAlignment="CENTER" textFill="#4e4e4e" GridPane.columnIndex="1">
                     <font>
                         <Font name="Verdana Bold" size="18.0" />
                     </font>

@@ -19,8 +19,6 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        //Application.setUserAgentStylesheet(getClass().getResource("Style.css").toExternalForm());
-
         primaryStageHolder = stage;
 
         //Loads our LoginView.fxml as our first Scene
@@ -28,7 +26,7 @@ public class HelloApplication extends Application {
         Parent LoginViewPane = LoginViewLoader.load();
         Scene overViewScene = new Scene(LoginViewPane, 800, 600);
 
-
+        //Adds out scenes to the UI when needed
         scenes.add(new SceneControllerPairs(
                 new Lazy<>(() -> buildScene("LoginView.fxml")),
                 ControllerNames.LoginView
@@ -49,20 +47,14 @@ public class HelloApplication extends Application {
         stage.setScene(overViewScene);
         stage.show();
 
-        Account account = new Account(0.0 , 1234);
 
-        account.checkBalance();
-
-        account.updateBalance(500.0);
-
-        System.out.println("Balance after update: " + account.getBalance());
 
 
     }
 
     /**
-     * changeScene
-     * @param sceneName
+     * changes between the different Scenes
+     * @param sceneName What scene is chosen from our enum list
      */
     public static void changeScene(ControllerNames sceneName) {
         primaryStageHolder.setTitle(sceneName.toString());
@@ -74,12 +66,16 @@ public class HelloApplication extends Application {
         }
     }
 
+    /**
+     * Loads and builds the scenes from our fxml-files.
+     * @param resource the path to the FXML file.
+     * @return the constructed Scene from on the FXML file or null in non found.
+     */
     private Scene buildScene(String resource) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
             Parent root = loader.load();
             Scene scene = new Scene(root, 800, 600);
-            //scene.getStylesheets().add(getClass().getResource(cssResource).toExternalForm());
             return scene;
         } catch (IOException e) {
             e.printStackTrace();
@@ -87,6 +83,11 @@ public class HelloApplication extends Application {
         }
     }
     public static void main(String[] args) {
+        Account account = new Account(0.0 , 1111);
+        account.checkBalance();
+        account.updateBalance(500.0);
+        System.out.println("Balance after update: " + account.getBalance());
+
         launch();
     }
 }

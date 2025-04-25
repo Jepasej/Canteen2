@@ -13,10 +13,14 @@ public class MenuItem {
     public double priceItemSandwich = 50.00;
     public double priceItemBurger = 200.00;
 
-
+    /**
+     * Creates an Array with Items and prices for these items, sets getters and setters for
+     * later use in different classes.
+     */
     public static List<MenuItem> menuItems = new ArrayList<>();
 
-    static {
+    static
+    {
         double priceItemSalad = 35.00;
         double priceItemSandwich = 50.00;
         double priceItemBurger = 200.00;
