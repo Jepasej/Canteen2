@@ -11,9 +11,9 @@ public class Payment {
      */
     public double paymentBalance(Double amount) {
 
-        if(account.checkAccount(amount))
+        if(account.checkBalance()>amount)
         {
-            account.updateAccount(amount);
+            account.updateBalance(amount);
         }
         return 0;
     }
