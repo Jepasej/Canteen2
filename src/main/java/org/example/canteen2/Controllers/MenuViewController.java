@@ -19,9 +19,10 @@ public class MenuViewController {
     @FXML
     private Button paymentBtn;
 
-    Payment payment;
+    static Payment payment;
     private CostCalculator costCalculator;
     private List<MenuItem> menuItems = new ArrayList<>();
+
 
     /**
      * A popup window that sits atop the MenuView window. Here the user can choose how to make the payment.
@@ -62,5 +63,9 @@ public class MenuViewController {
         //To check if the method shows the correct menuitems and total price. Only for development use
         System.out.println("Du har valgt: " + menuItems);
         System.out.printf("\nTotalprisen er: %2f DKK%n", total);
+    }
+
+    public static Payment getPayment() {
+        return payment;
     }
 }
