@@ -1,17 +1,23 @@
 package org.example.canteen2.Models;
 
+import org.example.canteen2.Controllers.MenuViewController;
+
 public class Order {
 
 
     double totalPrice = 0;
 
-    public void orderToPayment(Order payableOrder){
-
+    /**
+     * Receives an order from menuview and returns a boolean specifying whether transaction was succesful
+     * @param payableOrder
+     * @return true = payment successful. false = payment unsuccessful
+     */
+    public double orderToPayment(Order payableOrder){
         Order order = payableOrder;
+        double orderPaid;
 
         Double payableBalance = payableOrder.getTotalPrice();
-        //paymentnamegetfromLouise.paymentBalance(payableBalance);
-
+        orderPaid = MenuViewController.getPayment().paymentBalance(payableBalance);
     }
 
     public double getTotalPrice(){
