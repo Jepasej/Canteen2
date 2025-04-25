@@ -20,5 +20,6 @@ public class ChoosePaymentViewController {
     @FXML
     private void accountPayment() {
         selectedPayment = "account";
+
     }
 }

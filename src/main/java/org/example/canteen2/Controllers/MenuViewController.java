@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.canteen2.Models.MenuItem;
+import org.example.canteen2.Models.Order;
 import org.example.canteen2.Models.Payment;
 import org.example.canteen2.Service.CostCalculator;
 
@@ -22,6 +23,7 @@ public class MenuViewController {
     static Payment payment;
     private CostCalculator costCalculator;
     private List<MenuItem> menuItems = new ArrayList<>();
+    private Order order = new Order(532.0);
 
 
     /**
@@ -48,7 +50,9 @@ public class MenuViewController {
             String valgt = ChoosePaymentViewController.getSelectedPayment();
             if (valgt != null && valgt.equals("account")) {
                 payment = new Payment();
+                order.orderToPayment(order);
             }
+
         }
         catch (IOException e) {
             System.out.println("File \"ChoosePaymentView.fxml\" not found");

@@ -9,6 +9,9 @@ public class Order {
 
     double totalPrice = 0;
 
+    public Order(Double price) {
+        totalPrice = price;
+    }
     /**
      * Receives an order from menuview and returns a boolean specifying whether transaction was succesful
      * @param payableOrder
