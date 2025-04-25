@@ -14,10 +14,12 @@ public class Order {
      */
     public double orderToPayment(Order payableOrder){
         Order order = payableOrder;
-        double orderPaid;
+        double orderPrice;
 
-        Double payableBalance = payableOrder.getTotalPrice();
-        orderPaid = MenuViewController.getPayment().paymentBalance(payableBalance);
+        Double payableBalance = order.getTotalPrice();
+        orderPrice = MenuViewController.getPayment().paymentBalance(payableBalance);
+
+        return orderPrice;
     }
 
     public double getTotalPrice(){
