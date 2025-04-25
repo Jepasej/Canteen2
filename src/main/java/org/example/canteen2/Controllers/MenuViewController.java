@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.example.canteen2.Models.Payment;
 
 import java.io.IOException;
 
@@ -14,6 +15,7 @@ public class MenuViewController {
     @FXML
     private Button paymentBtn;
 
+    Payment payment;
     /**
      * A popup window that sits atop the MenuView window. Here the user can choose how to make the payment.
      * @throws IOException If the file can't be found
@@ -36,5 +38,9 @@ public class MenuViewController {
         catch (IOException e) {
             System.out.println("Fil \"ChoosePaymentView.fxml\" ikke fundet");
         }
+    }
+
+    public static Payment getPayment() {
+        return payment;
     }
 }
