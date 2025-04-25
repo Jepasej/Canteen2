@@ -2,6 +2,7 @@ package org.example.canteen2.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class ChoosePaymentViewController {
     private static String selectedPayment = null;
@@ -18,5 +19,7 @@ public class ChoosePaymentViewController {
     @FXML
     private void accountPayment() {
         selectedPayment = "account";
+        Stage stage = (Stage) accountBtn.getScene().getWindow();
+        stage.close();
     }
 }
